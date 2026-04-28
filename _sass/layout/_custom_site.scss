@@ -77,8 +77,19 @@ body,
   object-fit: contain;
 }
 
-.greedy-nav .hidden-links {
-  z-index: 6;
+.greedy-nav .visible-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.greedy-nav .visible-links li {
+  display: block;
+}
+
+.greedy-nav .hidden-links,
+.greedy-nav button {
+  display: none;
 }
 
 html[data-theme="dark"] body::before {
