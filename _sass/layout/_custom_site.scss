@@ -48,6 +48,11 @@ body,
   background: rgba(255, 255, 255, 0.94);
 }
 
+.masthead__menu {
+  position: relative;
+  z-index: 3;
+}
+
 .masthead__inner-wrap {
   position: relative;
   padding-right: 270px;
@@ -61,6 +66,7 @@ body,
   max-width: 250px;
   transform: translateY(-50%);
   line-height: 0;
+  z-index: 1;
 }
 
 .masthead__tcd-logo img {
@@ -69,6 +75,37 @@ body,
   max-width: 100%;
   max-height: 56px;
   object-fit: contain;
+}
+
+.greedy-nav button,
+#theme-toggle {
+  position: relative;
+  z-index: 5;
+}
+
+.greedy-nav .hidden-links {
+  z-index: 6;
+}
+
+html[data-theme="dark"] body::before {
+  background-image: linear-gradient(rgba(18, 18, 18, 0.82), rgba(18, 18, 18, 0.82)), url("/images/tcd-background.jpg");
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .page,
+html[data-theme="dark"] .archive,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .masthead,
+html[data-theme="dark"] .page__content,
+html[data-theme="dark"] .archive__item,
+html[data-theme="dark"] .author__urls,
+html[data-theme="dark"] .author__bio,
+html[data-theme="dark"] .author__pronouns {
+  color: #f7f7f7;
+}
+
+html[data-theme="dark"] .masthead {
+  background: rgba(24, 24, 24, 0.94);
 }
 
 .sidebar .author__avatar img {

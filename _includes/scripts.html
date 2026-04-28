@@ -1,3 +1,46 @@
 <script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
+<script>
+  document.addEventListener("click", function(event) {
+    var themeToggle = event.target.closest("#theme-toggle");
+    if (themeToggle) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      var root = document.documentElement;
+      var icon = document.getElementById("theme-icon");
+      var nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+
+      if (nextTheme === "dark") {
+        root.setAttribute("data-theme", "dark");
+        if (icon) {
+          icon.classList.remove("fa-sun");
+          icon.classList.add("fa-moon");
+        }
+      } else {
+        root.removeAttribute("data-theme");
+        if (icon) {
+          icon.classList.remove("fa-moon");
+          icon.classList.add("fa-sun");
+        }
+      }
+
+      try {
+        localStorage.setItem("theme", nextTheme);
+      } catch (error) {}
+      return;
+    }
+
+    var menuButton = event.target.closest("#site-nav > button");
+    if (menuButton) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      var hiddenLinks = document.querySelector("#site-nav .hidden-links");
+      if (hiddenLinks) {
+        hiddenLinks.classList.toggle("hidden");
+        menuButton.classList.toggle("close");
+      }
+    }
+  }, true);
+</script>
 
 {% include analytics.html %}
