@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Site customizations
+   ========================================================================== */
+
+body {
+  position: relative;
+  background-color: transparent;
+  padding-bottom: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url("/images/tcd-background.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+:root {
+  --global-text-color: #000;
+  --global-masthead-link-color: #000;
+  --global-masthead-link-color-hover: #000;
+}
+
+body,
+.page,
+.archive,
+.sidebar,
+.masthead,
+.page__content,
+.archive__item,
+.author__urls,
+.author__bio,
+.author__pronouns {
+  color: #000;
+}
+
+.masthead {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.masthead__inner-wrap {
+  position: relative;
+  padding-right: 270px;
+}
+
+.masthead__tcd-logo {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  width: auto;
+  max-width: 250px;
+  transform: translateY(-50%);
+  line-height: 0;
+}
+
+.masthead__tcd-logo img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 56px;
+  object-fit: contain;
+}
+
+.sidebar .author__avatar img {
+  max-width: 210px;
+}
+
+.sidebar {
+  z-index: 2;
+}
+
+.sidebar .author__name {
+  font-size: 1.4rem;
+}
+
+.sidebar p,
+.sidebar li,
+.sidebar .author__urls a {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.sidebar .author__pronouns,
+.sidebar .author__bio {
+  font-size: 1rem;
+}
+
+.sidebar .author__urls i {
+  width: 1.35em;
+  font-size: 1.05em;
+}
+
+.page__footer {
+  background: rgba(255, 255, 255, 0.92);
+  position: static;
+  bottom: auto;
+  float: none;
+  clear: both;
+  display: none;
+}
+
+.page__footer footer {
+  padding-top: 1em;
+  text-align: center;
+}
+
+.page__footer-copyright {
+  color: var(--global-text-color);
+  font-size: $type-size-6;
+}
+
+@media screen and (max-width: 700px) {
+  .masthead__inner-wrap {
+    padding-right: 1em;
+  }
+
+  .masthead__tcd-logo {
+    display: none;
+  }
+}
