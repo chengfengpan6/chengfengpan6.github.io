@@ -171,6 +171,23 @@ html[data-theme="dark"] .masthead {
   display: none;
 }
 
+.cv-download-link {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.9rem;
+  color: #fff;
+  background: #000;
+  border-radius: 4px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cv-download-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .cv-mobile-preview img {
   display: block;
   width: 100%;
